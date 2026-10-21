@@ -4,8 +4,9 @@ Core implementation of SDGFN for major depressive disorder (MDD) classification 
 
 The experiments used the Beijing Anding Hospital clinical cohort and the publicly available multi-site Meta-MDD dataset; neither dataset is included in this repository, and access is subject to the requirements of their respective providers.
 
-
 SDGFN integrates low-order individualized radiomics-based structural similarity networks (iRSSN) with their high-order counterparts (Ho-iRSSN). The low-order branch combines GATv2-style local attention with GraphGPS-style global modeling. The high-order branch uses signed edge-aware attention. Both branches are trained jointly through adaptive gated fusion, auxiliary classification losses, and an orthogonality constraint.
+
+The low-order iRSSN represents pairwise similarity between the radiomic profiles of gray-matter regions, capturing regional structural correspondence in sMRI rather than direct anatomical connectivity. Ho-iRSSN compares the whole-brain connectivity profiles represented in iRSSN, characterizing how similarly regions are embedded in the broader structural network. It may reflect coordinated organization across distributed brain regions, but should not be interpreted as direct functional coupling or causal interaction. Together, the two representations provide complementary views of local structural similarity and whole-brain topological organization that may help characterize distributed structural patterns associated with MDD.
 
 ## Files
 
